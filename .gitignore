@@ -1,0 +1,8 @@
+.env
+.ipynb_checkpoints/
+bigquery-key.json
+.venv/
+__pycache__/
+Video_Games_5.json
+Video_Games_5.json.zip
+cleaned_reviews.csv
