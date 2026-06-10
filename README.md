@@ -93,3 +93,5 @@ To re-run the notebook's LLM classification or BigQuery steps, you'll need your 
 
 - GPT occasionally returned "Mixed" (6 of 999, 0.6%) despite being prompted for three categories, reflecting genuinely ambivalent reviews and the fact that LLMs do not always follow instructions precisely. These cases were excluded from trend analysis.
 - Python 3.10 is used here; Google libraries will require 3.11+ after October 2026.
+
+🔗 **[Live Demo](https://game-review-sentiment.streamlit.app)**
