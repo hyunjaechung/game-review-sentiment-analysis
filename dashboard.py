@@ -17,7 +17,7 @@ st.markdown("Sentiment analysis of Amazon Video Game Reviews using GPT-4o-mini")
 st.markdown("---")
 
 # Load data
-@st.cache
+@st.cache_data
 def load_data():
     df = pd.read_csv('./sentiment_results.csv')
     # Add star-rating-based sentiment for validation
@@ -76,11 +76,11 @@ neutral  = len(filtered_df[filtered_df['sentiment'] == 'Neutral'])
 total    = max(positive + negative + neutral, 1)  # avoid divide by zero
 
 with col1:
-    st.metric("Positive", f"{positive}", f"{positive/total*100:.1f}%")
+    st.metric("Positive", f"{positive} ({positive/total*100:.1f}%)")
 with col2:
-    st.metric("Negative", f"{negative}", f"{negative/total*100:.1f}%")
+    st.metric("Negative", f"{negative} ({negative/total*100:.1f}%)")
 with col3:
-    st.metric("Neutral", f"{neutral}", f"{neutral/total*100:.1f}%")
+    st.metric("Neutral", f"{neutral} ({neutral/total*100:.1f}%)")
 
 st.markdown("---")
 
@@ -109,7 +109,7 @@ if len(trend_df) > 0:
 
     ax1.set_xlabel('Year', fontsize=12)
     ax1.set_ylabel('Percentage (%)', fontsize=12)
-    ax1.set_title('Sentiment Trend', fontsize=14, fontweight='bold')
+    ax1.set_title('Video Game Review Sentiment Trend', fontsize=14, fontweight='bold')
     ax1.legend(fontsize=11)
     ax1.grid(True, alpha=0.3)
     plt.tight_layout()
@@ -149,7 +149,7 @@ st.markdown("Browse individual reviews based on the filters in the sidebar.")
 
 explorer_df = filtered_df[['overall', 'year', 'sentiment', 'reviewText']].copy()
 explorer_df.columns = ['Stars', 'Year', 'GPT Sentiment', 'Review Text']
-st.dataframe(explorer_df)
+st.dataframe(explorer_df, use_container_width=True)
 
 st.markdown("---")
 st.caption("Data source: Amazon Video Game Reviews | Model: GPT-4o-mini | Sample: 999 reviews (2010-2018)")
