@@ -2,6 +2,8 @@
 
 Sentiment analysis of Amazon video game reviews using GPT-4o-mini, validated against reviewer star ratings, with yearly trend analysis, a BigQuery data pipeline, and an interactive Streamlit dashboard.
 
+🔗 **[View the Live Dashboard](https://game-review-sentiment.streamlit.app)**
+
 ## Overview
 
 This project classifies the sentiment of Amazon video game reviews (2010–2018) using a large language model, then validates those classifications against the reviewers' own star ratings to find where they agree and disagree. It demonstrates an end-to-end workflow: raw data cleaning, LLM-based classification, validation, cloud data warehousing, and interactive visualization.
@@ -93,5 +95,3 @@ To re-run the notebook's LLM classification or BigQuery steps, you'll need your 
 
 - GPT occasionally returned "Mixed" (6 of 999, 0.6%) despite being prompted for three categories, reflecting genuinely ambivalent reviews and the fact that LLMs do not always follow instructions precisely. These cases were excluded from trend analysis.
 - Python 3.10 is used here; Google libraries will require 3.11+ after October 2026.
-
-🔗 **[Live Demo](https://game-review-sentiment.streamlit.app)**
