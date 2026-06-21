@@ -6,3 +6,4 @@ __pycache__/
 Video_Games_5.json
 Video_Games_5.json.zip
 cleaned_reviews.csv
+.DS_Store
